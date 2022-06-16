@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<head>
+    <title>Guestbook Challenge</title>
+</head>
+<body>
+  <!--HTML for checkmark and Button-->  
+    <p>By using this form you agree with the storage and handeling of your personal data.</p>
+
+    <input type="checkbox" id="agree" onclick="checkBox()">
+    
+    <p id="text" style="display:none">Thanks for Agreeing</p>
+    
+    <script>
+    //checkbox
+    function checkBox() {
+      var checkBox = document.getElementById("agree");
+      var text = document.getElementById("text");
+      if (checkBox.checked == true){
+        text.style.display = "block";
+      } else {
+         text.style.display = "none";
+      }
+    }
+    </script>
+
+<br>
+<br>
+<br>
+<input type="submit" onClick="submitLink()"/>
+</form>
+<script>
+    //Submit function
+    function submitLink() {
+        window.location.href="http:qq//localhost:3000/reservation_submit";
+      }
+
+
+</script>
+
+
+
+</body>
+
+<!-- FrontEnd Developer Challenge -->
+<script>
+//Step 1: The Rate Page
+var checkIn = document.getElementsByClassName("search-bar-container_checkIn");
+var checkIndate = checkIn[0].lastChild.innerText;
+console.log({checkIn});
+console.log({checkIndate});
+
+var checkOut = document.getElementsByClassName("search-bar-container_checkOut");
+var checkOutdate = checkOut[0].childNodes[1].innerText;
+
+console.log({checkOut});
+console.log({checkOutdate});
+
+//Step 2: Guest Information Page
+var guest = document.getElementsByClassName("reservation-cart-container_summary");
+var numberOfAdults  = guest[0].lastChild.innerText;
+console.log({guest});
+console.log({numberOfAdults});
+
+var total = document.getElementsByClassName("reservation-cart-container_price");
+var subTotal = total[0].lastChild.innerText;
+console.log({total});
+console.log({subTotal});
+var totalTax = document.getElementsByClassName("price-summary_price");
+var totalWithTaxes = totalTax[0].lastChild.innerText;
+console.log({totalTax});
+console.log({totalWithTaxes});
+
+var address = document.getElementsByClassName("guest-info_emailAddressFieldGroup");
+var email = address[0].childNodes[0].inputMode
+console.log({address});
+console.log({email});
+
+var fName = document.getElementsByClassName("guest-info_firstNameField");
+var firstName = fName[0].childNodes[0].inputMode
+console.log({fName});
+console.log({firstName});
+
+var lName = document.getElementsByClassName("guest-info_lastNameField");
+var lastName = lName[0].childNodes[0].inputMode
+console.log({lName});
+console.log({lastName});
+</script>
+<!-- Date To Number Tool -->
+<script>
+    //practice variable
+    var checkOut = 'Wed, Jun 2, 2022';
+// code to translate date
+function formatDate(checkOut) {
+    var let = new Date(checkOut),
+        month = '' + (let.getMonth() + 1),
+        day = '' + let.getDate(),
+        year = let.getFullYear();
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+    return [year, month, day].join('-');
+}
+ 
+console.log(formatDate(checkOut));
+    //practice variable
+var checkIn = 'Sun, Jun 20, 2022';
+// code to translate date
+function formatDate(checkIn) {
+    var let = new Date(checkIn),
+        month = '' + (let.getMonth() + 1),
+        day = '' + let.getDate(),
+        year = let.getFullYear();
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+    return [year, month, day].join('-');
+}
+ 
+console.log(formatDate(checkIn));
+</script>
+</html>
